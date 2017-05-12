@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/imgUser" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NIM"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imgUser"
+        android:layout_toEndOf="@+id/imgUser" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtNim"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/txtNama"
+        android:layout_alignStart="@+id/txtNama" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_toEndOf="@+id/imgUser"
+        android:layout_toRightOf="@+id/imgUser"
+        android:text="Nama" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtNama"
+        android:layout_below="@+id/txtNim"
+        android:layout_alignLeft="@+id/txtAlamat"
+        android:layout_alignStart="@+id/txtAlamat" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_toEndOf="@+id/imgUser"
+        android:layout_toRightOf="@+id/imgUser"
+        android:text="Alamat" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtAlamat"
+        android:layout_below="@+id/txtNama"
+        android:layout_alignLeft="@+id/txtKabupaten"
+        android:layout_alignStart="@+id/txtKabupaten" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_toEndOf="@+id/imgUser"
+        android:layout_toRightOf="@+id/imgUser"
+        android:text="Kabupaten" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtKabupaten"
+        android:layout_below="@+id/txtAlamat"
+        android:layout_toRightOf="@+id/textView5"
+        android:layout_toEndOf="@+id/textView5"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txtProvinsi"
+        android:layout_toEndOf="@+id/imgUser"
+        android:layout_toRightOf="@+id/imgUser"
+        android:text="Provinsi" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtProvinsi"
+        android:layout_below="@+id/txtKabupaten"
+        android:layout_alignLeft="@+id/txtKabupaten"
+        android:layout_alignStart="@+id/txtKabupaten" />
+
+</RelativeLayout>
