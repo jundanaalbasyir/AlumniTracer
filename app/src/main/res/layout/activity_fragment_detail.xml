@@ -1,0 +1,128 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="jp.jundana_albasyir.alumnitracer.FragmentDetail">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@android:color/holo_orange_light"
+        android:padding="10dip">
+
+        <TextView
+            android:id="@+id/lblNim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIM" />
+
+        <EditText
+            android:id="@+id/txtNIM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblNim"
+            android:background="@android:drawable/editbox_background" />
+
+        <TextView
+            android:id="@+id/lblNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtNIM"
+            android:text="Nama" />
+
+        <EditText
+            android:id="@+id/txtNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblNama"
+            android:background="@android:drawable/editbox_background" />
+
+        <TextView
+            android:id="@+id/lblEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtNama"
+            android:text="Email" />
+
+        <EditText
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblEmail"
+            android:background="@android:drawable/editbox_background" />
+
+        <TextView
+            android:id="@+id/lblFakultas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtEmail"
+            android:text="Fakultas" />
+
+        <EditText
+            android:id="@+id/txtFakultas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblFakultas"
+            android:background="@android:drawable/editbox_background" />
+
+        <TextView
+            android:id="@+id/lblAlamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtFakultas"
+            android:text="Alamat" />
+
+        <EditText
+            android:id="@+id/txtAlamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblAlamat"
+            android:background="@android:drawable/editbox_background" />
+
+        <TextView
+            android:id="@+id/lblKab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtAlamat"
+            android:text="Kabupaten" />
+
+        <EditText
+            android:id="@+id/txtKabupaten"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblKab"
+            android:background="@android:drawable/editbox_background" />
+
+        <TextView
+            android:id="@+id/lblProv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtKabupaten"
+            android:text="Provinsi" />
+
+        <EditText
+            android:id="@+id/txtProvinsi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblProv"
+            android:background="@android:drawable/editbox_background" />
+
+        <Button
+            android:id="@+id/btnKembali"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kembali"
+            android:layout_below="@+id/txtProvinsi"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="18dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+
+    </RelativeLayout>
+
+</FrameLayout>

@@ -6,10 +6,12 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,6 +44,8 @@ public class FragmentPencarian extends Fragment {
 
     private static String nim = "";
     private static String nama = "";
+    private static String email = "";
+    private static String fakultas ="";
     private static String alamat = "";
     private static String nama_kabupaten = "";
     private static String nama_provinsi = "";
@@ -133,7 +137,7 @@ public class FragmentPencarian extends Fragment {
                         return;
                     }
 
-                    final String REGISTER_URL = "https://pplfinalproject.000webhostapp.com/pplku/cari.php?kriteria=" + setKriteria;
+                    final String REGISTER_URL = "https://mmain0002.000webhostapp.com/cari.php?kriteria=" + setKriteria;
                     JsonObjectRequest jsonRequest = new JsonObjectRequest
                             (Request.Method.GET, REGISTER_URL, null, new Response.Listener<JSONObject>() {
                                 @Override
@@ -150,6 +154,8 @@ public class FragmentPencarian extends Fragment {
 
                                             nim = c.getString("nim");
                                             nama = c.getString("nama");
+                                            email = c.getString("email");
+                                            fakultas = c.getString("fakultas");
                                             alamat = c.getString("alamat");
                                             nama_kabupaten = c.getString("nama_kabupaten");
                                             nama_provinsi = c.getString("nama_provinsi");
@@ -158,6 +164,8 @@ public class FragmentPencarian extends Fragment {
                                             sr1 = new SearchResults();
                                             sr1.set_nim(nim);
                                             sr1.set_nama(nama);
+                                            sr1.set_email(email);
+                                            sr1.set_fakultas(fakultas);
                                             sr1.set_alamat(alamat);
                                             sr1.set_nama_kabupaten(nama_kabupaten);
                                             sr1.set_nama_provinsi(nama_provinsi);
@@ -209,6 +217,8 @@ public class FragmentPencarian extends Fragment {
     public class SearchResults {
         private String nim = "";
         private String nama = "";
+        private String email = "";
+        private String fakultas = "";
         private String alamat = "";
         private String nama_kabupaten = "";
         private String nama_provinsi = "";
@@ -229,6 +239,22 @@ public class FragmentPencarian extends Fragment {
 
         public String get_nama() {
             return nama;
+        }
+
+        public void set_email(String email) {
+            this.email = email;
+        }
+
+        public String get_email() {
+            return email;
+        }
+
+        public void set_fakultas(String fakultas) {
+            this.fakultas = fakultas;
+        }
+
+        public String get_fakultas() {
+            return fakultas;
         }
 
         public void set_alamat(String alamat) {
@@ -270,7 +296,6 @@ public class FragmentPencarian extends Fragment {
         public String get_img_user() {
             return img_user;
         }
-
     }
 
     public class MyCustomBaseAdapter extends BaseAdapter {
@@ -303,10 +328,11 @@ public class FragmentPencarian extends Fragment {
                 holder = new ViewHolder();
                 holder.txt_nim = (TextView) convertView.findViewById(R.id.txtNim);
                 holder.txt_nama = (TextView) convertView.findViewById(R.id.txtNama);
+                holder.txt_email = (TextView) convertView.findViewById(R.id.txtEmail);
+                holder.txt_fakultas = (TextView) convertView.findViewById(R.id.txtFakultas);
                 holder.txt_alamat = (TextView) convertView.findViewById(R.id.txtAlamat);
                 holder.txt_Kabupaten = (TextView) convertView.findViewById(R.id.txtKabupaten);
                 holder.txt_Provinsi = (TextView) convertView.findViewById(R.id.txtProvinsi);
-
                 holder.imgPhoto = (ImageView) convertView.findViewById(R.id.imgUser);
                 convertView.setTag(holder);
             } else {
@@ -315,6 +341,8 @@ public class FragmentPencarian extends Fragment {
 
             holder.txt_nim.setText(searchArrayList.get(position).get_nim());
             holder.txt_nama.setText(searchArrayList.get(position).get_nama());
+            holder.txt_email.setText(searchArrayList.get(position).get_email());
+            holder.txt_fakultas.setText(searchArrayList.get(position).get_fakultas());
             holder.txt_alamat.setText(searchArrayList.get(position).get_alamat());
             holder.txt_Kabupaten.setText(searchArrayList.get(position).get_nama_kabupaten());
             holder.txt_Provinsi.setText(searchArrayList.get(position).get_nama_provinsi());
@@ -331,6 +359,8 @@ public class FragmentPencarian extends Fragment {
             ImageView imgPhoto;
             TextView txt_nim;
             TextView txt_nama;
+            TextView txt_email;
+            TextView txt_fakultas;
             TextView txt_alamat;
             TextView txt_Kabupaten;
             TextView txt_Provinsi;
@@ -342,5 +372,44 @@ public class FragmentPencarian extends Fragment {
 
         final ListView lv1 = (ListView) getView().findViewById(R.id.lvDataUser);
         lv1.setAdapter(new MyCustomBaseAdapter(getActivity(), searchResults));
+
+        lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id) {
+                //Toast.makeText(getActivity(), "User Name : " + user_name +" clicking ...", Toast.LENGTH_LONG).show();
+                String dnim = ((TextView) view.findViewById(R.id.txtNim)).getText().toString();
+                String dnama = ((TextView) view.findViewById(R.id.txtNama)).getText().toString();
+                String demail = ((TextView) view.findViewById(R.id.txtEmail)).getText().toString();
+                String dfakultas = ((TextView) view.findViewById(R.id.txtFakultas)).getText().toString();
+                String dalamat = ((TextView) view.findViewById(R.id.txtAlamat)).getText().toString();
+                String dkabupaten = ((TextView) view.findViewById(R.id.txtKabupaten)).getText().toString();
+                String dprovinsi = ((TextView) view.findViewById(R.id.txtProvinsi)).getText().toString();
+
+                ImageView imgUser = ((ImageView) view.findViewById(R.id.imgUser));
+
+//                String d_jeniskelamin = imgUser.getTag().toString();
+
+                Bundle bundle_search = new Bundle();
+                bundle_search.putString("nim", dnim);
+                bundle_search.putString("nama", dnama);
+                bundle_search.putString("email", demail);
+                bundle_search.putString("fakultas", dfakultas);
+                bundle_search.putString("alamat", dalamat);
+                bundle_search.putString("nama_kabupaten", dkabupaten);
+                bundle_search.putString("nama_provinsi", dprovinsi);
+//                bundle_search.putString("jenis_kelamin", d_jeniskelamin);
+
+                android.support.v4.app.Fragment mFragment = null;
+                mFragment = FragmentDetail.newInstance(bundle_search);
+                mFragment.setArguments(bundle_search);
+
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.content_main, mFragment)
+                        .commit();
+            }
+        });
     }
 }

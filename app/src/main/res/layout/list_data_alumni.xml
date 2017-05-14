@@ -70,38 +70,54 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView4"
-        android:layout_toEndOf="@+id/imgUser"
+        android:text="Kabupaten"
+        android:layout_above="@+id/textView6"
         android:layout_toRightOf="@+id/imgUser"
-        android:text="Kabupaten" />
+        android:layout_toEndOf="@+id/imgUser" />
 
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtKabupaten"
-        android:layout_below="@+id/txtAlamat"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_alignBaseline="@+id/textView5"
+        android:layout_alignBottom="@+id/textView5"
         android:layout_toRightOf="@+id/textView5"
-        android:layout_toEndOf="@+id/textView5"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp" />
+        android:layout_toEndOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/txtProvinsi"
-        android:layout_toEndOf="@+id/imgUser"
+        android:text="Provinsi"
+        android:layout_alignBottom="@+id/imgUser"
         android:layout_toRightOf="@+id/imgUser"
-        android:text="Provinsi" />
+        android:layout_toEndOf="@+id/imgUser" />
 
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtProvinsi"
-        android:layout_below="@+id/txtKabupaten"
+        android:layout_alignBaseline="@+id/textView6"
+        android:layout_alignBottom="@+id/textView6"
         android:layout_alignLeft="@+id/txtKabupaten"
         android:layout_alignStart="@+id/txtKabupaten" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtFakultas"
+        android:textSize="0mm"/>
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtEmail"
+        android:textSize="0mm"/>
 
 </RelativeLayout>

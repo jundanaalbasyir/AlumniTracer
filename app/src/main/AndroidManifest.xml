@@ -22,7 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".FragmentPencarian" />
-        <activity android:name=".FragmentAwal"></activity>
+        <activity android:name=".FragmentAwal" />
+        <activity android:name=".FragmentDetail"></activity>
     </application>
 
 </manifest>
